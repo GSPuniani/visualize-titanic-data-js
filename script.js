@@ -19,15 +19,29 @@ const passengers = data.map(p => {
 
 // Let's loop over each passenger and set some styles 
 passengers.forEach((p, i) => {
-  const { pclass, survived, sex } = data[i].fields
+  const { pclass, survived, sex, embarked } = data[i].fields
   // p.style.width = '10px'
   // p.style.height = '10px'
   p.style.width = '15px'
   p.style.height = '15px'
-  p.style.opacity = survived === 'Yes' ? '100%' : '50%' 
-  p.style.backgroundColor = '#000'
+  p.style.opacity = survived === 'Yes' ? '100%' : '50%'
+
+  if (embarked === "S") {
+    p.style.backgroundColor = '#F84'
+  } else if (embarked === "C") {
+    p.style.backgroundColor = '#1F1'
+  } else if (embarked === "Q") {
+    p.style.backgroundColor = '#23F'
+  } else {
+    p.style.backgroundColor = '#000'
+  }
+
   p.style.borderRadius = sex === 'female' ? '50%' : 0
 })
+
+
+// OPTIONS: wrap forEach in function to make it interactive with buttons (use flags)
+
 
 // Challenges - 
 

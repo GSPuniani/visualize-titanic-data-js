@@ -19,7 +19,7 @@ const passengers = data.map(p => {
 
 // Let's loop over each passenger and set some styles 
 passengers.forEach((p, i) => {
-  const { pclass, survived, sex, embarked } = data[i].fields
+  const { pclass, survived, sex, embarked, fares } = data[i].fields
   // p.style.width = '10px'
   // p.style.height = '10px'
   p.style.width = '15px'
@@ -27,13 +27,13 @@ passengers.forEach((p, i) => {
   p.style.opacity = survived === 'Yes' ? '100%' : '50%'
 
   if (embarked === "S") {
-    p.style.backgroundColor = '#F84'
+    p.style.backgroundColor = 'red'
   } else if (embarked === "C") {
-    p.style.backgroundColor = '#1F1'
+    p.style.backgroundColor = 'green'
   } else if (embarked === "Q") {
-    p.style.backgroundColor = '#23F'
+    p.style.backgroundColor = 'blue'
   } else {
-    p.style.backgroundColor = '#000'
+    p.style.backgroundColor = 'black'
   }
 
   p.style.borderRadius = sex === 'female' ? '50%' : 0
@@ -57,7 +57,7 @@ passengers.forEach((p, i) => {
 // Change the number of columns on the titanic to 34
 
 
-// TODO 
+// DONE 
 
 // Display each passenger as a circle if they are female. 
 // Do this by setting the borderRadius of each passenger. 
@@ -71,7 +71,7 @@ passengers.forEach((p, i) => {
 // opacity 0.5. 
 
 
-// TODO
+// DONE
 
 // Set the backgroundColor of each passenger by their 
 // embarked value. There are three possible values: 

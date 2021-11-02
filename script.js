@@ -11,15 +11,17 @@ titanic.style.gridTemplateColumns = 'repeat(34, 15px)'
 titanic.style.gridGap = '1px'
 
 // Map over the data and make a new element for each passenger
-const passengers = data.map(p => {
+const passengers = data.map((p, i) => {
   const el = document.createElement('div')
+  el.classList.add("passenger")
+  el.dataset.id = i
   titanic.appendChild(el)
   return el
 })
 
 // Let's loop over each passenger and set some styles 
 passengers.forEach((p, i) => {
-  const { pclass, survived, sex, embarked, fares } = data[i].fields
+  const { pclass, survived, sex, embarked, fares, age } = data[i].fields
   // p.style.width = '10px'
   // p.style.height = '10px'
   p.style.width = '15px'
@@ -27,16 +29,28 @@ passengers.forEach((p, i) => {
   p.style.opacity = survived === 'Yes' ? '100%' : '50%'
 
   if (embarked === "S") {
-    p.style.backgroundColor = 'red'
+    p.style.backgroundColor = 'tomato'
   } else if (embarked === "C") {
-    p.style.backgroundColor = 'green'
+    p.style.backgroundColor = 'cornflowerblue'
   } else if (embarked === "Q") {
-    p.style.backgroundColor = 'blue'
+    p.style.backgroundColor = 'gold'
   } else {
     p.style.backgroundColor = 'black'
   }
 
+  // p.style.scale = age < 18
+
+  // if (age < 18) {
+  //   p.style.scale = 
+  // }
+
   p.style.borderRadius = sex === 'female' ? '50%' : 0
+})
+
+document.body.addEventListener("mouseover", e => {
+  if (e.target.matches(".passenger")) {
+    console.log(data[e.target.dataset.id].fields.age)
+  }
 })
 
 

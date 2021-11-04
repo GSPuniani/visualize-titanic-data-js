@@ -38,11 +38,9 @@ passengers.forEach((p, i) => {
     p.style.backgroundColor = 'black'
   }
 
-  // p.style.scale = age < 18
-
-  // if (age < 18) {
-  //   p.style.scale = 
-  // }
+  if (age < 18) {
+    p.style.transform = "scale(0.65, 0.65)"
+  }
 
   p.style.borderRadius = sex === 'female' ? '50%' : 0
 })

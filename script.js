@@ -8,7 +8,7 @@ const titanic = document.querySelector('#titanic')
 titanic.style.display = 'grid'
 // titanic.style.gridTemplateColumns = 'repeat(20, 10px)'
 titanic.style.gridTemplateColumns = 'repeat(34, 15px)'
-titanic.style.gridGap = '1px'
+titanic.style.gridGap = '10px'
 
 // Map over the data and make a new element for each passenger
 const passengers = data.map((p, i) => {
@@ -26,7 +26,7 @@ passengers.forEach((p, i) => {
   // p.style.height = '10px'
   p.style.width = '15px'
   p.style.height = '15px'
-  p.style.opacity = survived === 'Yes' ? '100%' : '50%'
+  p.style.opacity = survived === 'Yes' ? '100%' : '30%'
 
   if (embarked === "S") {
     p.style.backgroundColor = 'tomato'
@@ -42,8 +42,21 @@ passengers.forEach((p, i) => {
     p.style.transform = "scale(0.65, 0.65)"
   }
 
+  if (pclass === 1) {
+    p.style.borderStyle = "solid"
+  } else if (pclass === 2) {
+    p.style.borderStyle = "dotted"
+  }
+
   p.style.borderRadius = sex === 'female' ? '50%' : 0
 })
+
+fields.sort((a, b) => {
+  return a.fare - b.fare // 
+})
+
+
+const popup = document.createElement
 
 document.body.addEventListener("mouseover", e => {
   if (e.target.matches(".passenger")) {

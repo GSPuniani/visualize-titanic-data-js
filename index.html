@@ -8,48 +8,70 @@
   </head>
   <body>
 
-    <h1>Titanic Data Visualization</h1>
+    <div>
 
-    <p><b>Legend:</Legend></b></p>
+      <h1>Titanic Data Visualization</h1>
 
-    <p>Survival Status</p>
-    <ul>
-      <li>
-        Full Opacity => Survived
-      </li>
-      <li>
-        Half Opacity => Not Survived 
-      </li>
-    </ul>
+      <div id="legend">
 
-    <p>Gender</p>
-    <ul>
-      <li>
-        Circle => Female
-      </li>
-      <li>
-        Square => Male
-      </li>
-    </ul>
+        <p><b>Legend:</Legend></b></p>
 
-    <p>Port of Embarkation</p>
-    <ul>
-      <li>
-        Tomato => Southampton
-      </li>
-      <li>
-        Gold => Queenstown
-      </li>
-      <li>
-        Cornflower => Cherbourg
-      </li>
-      <li>
-        Black => None of the above
-      </li>
-    </ul>
+        <p>Survival Status</p>
+        <ul>
+          <li>
+            Full Opacity => Survived
+          </li>
+          <li>
+            Reduced Opacity => Not Survived 
+          </li>
+        </ul>
+
+        <p>Class</p>
+        <ul>
+          <li>
+            Solid Border => First Class
+          </li>
+          <li>
+            Dotted Opacity => Second Class 
+          </li>
+          <li>
+            No Border => Third Class 
+          </li>
+        </ul>
+
+        <p>Gender</p>
+        <ul>
+          <li>
+            Circle => Female
+          </li>
+          <li>
+            Square => Male
+          </li>
+        </ul>
+
+        <p>Port of Embarkation</p>
+        <ul>
+          <li>
+            Tomato => Southampton
+          </li>
+          <li>
+            Gold => Queenstown
+          </li>
+          <li>
+            Cornflower => Cherbourg
+          </li>
+          <li>
+            Black => None of the above
+          </li>
+        </ul>
+
+      </div>
 
 
-    <div id="titanic"></div>
+      <div id="titanic"></div>
+
+    </div>
+
 
     <script src="script.js" type="module"></script>
   </body>

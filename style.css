@@ -1,3 +1,23 @@
 h1 {
     text-align: center;
 }
+
+body {
+    background-color: ivory;
+    color: darkslategrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div {
+    align-items: center;
+}
+
+#legend {
+    display: grid;
+}
+
+#titanic {
+    display: grid;
+}

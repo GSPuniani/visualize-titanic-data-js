@@ -8,7 +8,7 @@ const titanic = document.querySelector('#titanic')
 titanic.style.display = 'grid'
 // titanic.style.gridTemplateColumns = 'repeat(20, 10px)'
 titanic.style.gridTemplateColumns = 'repeat(34, 15px)'
-titanic.style.gridGap = '10px'
+titanic.style.gridGap = '12px'
 
 // Map over the data and make a new element for each passenger
 const passengers = data.map((p, i) => {
@@ -18,6 +18,24 @@ const passengers = data.map((p, i) => {
   titanic.appendChild(el)
   return el
 })
+
+// Sort by gender (females first)
+// data.sort((a, b) => {
+//   if (a.fields.sex === "female") {
+//     return -1
+//   }
+//   return 1
+// })
+
+// Sort by class
+data.sort((a, b) => {
+  return a.fields.pclass - b.fields.pclass
+})
+
+// Sort by fares
+// data.sort((a, b) => {
+//   return b.fields.fares - a.fields.fares
+// })
 
 // Let's loop over each passenger and set some styles 
 passengers.forEach((p, i) => {
@@ -51,21 +69,18 @@ passengers.forEach((p, i) => {
   p.style.borderRadius = sex === 'female' ? '50%' : 0
 })
 
-fields.sort((a, b) => {
-  return a.fare - b.fare // 
-})
 
 
-const popup = document.createElement
+const popup = document.querySelector('#passenger_info')
 
 document.body.addEventListener("mouseover", e => {
   if (e.target.matches(".passenger")) {
-    console.log(data[e.target.dataset.id].fields.age)
+    popup.classList.add(data[e.target.dataset.id].fields.fare)
+    // console.log(data[e.target.dataset.id].fields.fare)
+    return popup
   }
 })
 
-
-// OPTIONS: wrap forEach in function to make it interactive with buttons (use flags)
 
 
 // Challenges - 
